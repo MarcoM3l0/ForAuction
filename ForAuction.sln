@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EA0A19AE-B74D-4F8E-956D-BDD25F920089}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9D3FEEEA-06BF-4E26-9E15-0B0E365F7296}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForAuction.API", "src\ForAuction.API\ForAuction.API.csproj", "{30478BC9-544E-4933-A30C-C7463F037DA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30478BC9-544E-4933-A30C-C7463F037DA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30478BC9-544E-4933-A30C-C7463F037DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30478BC9-544E-4933-A30C-C7463F037DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30478BC9-544E-4933-A30C-C7463F037DA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30478BC9-544E-4933-A30C-C7463F037DA3} = {EA0A19AE-B74D-4F8E-956D-BDD25F920089}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B46C6420-2A72-493F-AF2B-656A14FA63B5}
+	EndGlobalSection
+EndGlobal
