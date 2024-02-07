@@ -3,9 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ForAuction.API.Controllers;
 
-[Route("api/[controller]")]
-[ApiController]
-public class AuctionController : ControllerBase
+public class AuctionController : ForAuctionBaseController
 {
     [HttpGet]
     [ProducesResponseType(typeof(Auction), StatusCodes.Status200OK)]
