@@ -18,5 +18,6 @@ public class AuctionRepository : IAuctionRpository
             .Auctions
             .Include(auction => auction.Items)
             .FirstOrDefault(auction => todey >= auction.Starts && todey <= auction.Ends);
+
     }
 }
