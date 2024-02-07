@@ -1,6 +1,6 @@
 ﻿using ForAuction.API.communication.Requests;
+using ForAuction.API.Contracts;
 using ForAuction.API.Entities;
-using ForAuction.API.Repositories;
 using ForAuction.API.Services;
 
 namespace ForAuction.API.UseCases.Offers.CreateOffer;
@@ -8,13 +8,17 @@ namespace ForAuction.API.UseCases.Offers.CreateOffer;
 public class CreateOfferUseCase
 {
     private readonly LoggedUser _loggedUser;
+    private readonly IOfferRepository _repository;
 
-    public CreateOfferUseCase(LoggedUser loggedUser) => _loggedUser = loggedUser;
+    public CreateOfferUseCase(LoggedUser loggedUser, IOfferRepository repository)
+    {
+        _loggedUser = loggedUser;
+        _repository = repository;
+
+    }
 
     public int Execute(int itemId, RequestCreateOfferJson request)
     {
-        var repository = new ForAuctionDbContext();
-
         var user = _loggedUser.User();
 
         var offer = new Offer
@@ -25,9 +29,7 @@ public class CreateOfferUseCase
             UserId = user.Id,
         };
 
-        repository.Offers.Add(offer);
-
-        repository.SaveChanges();
+        _repository.Add(offer);
 
         return offer.Id;
 

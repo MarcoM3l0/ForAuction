@@ -1,24 +1,25 @@
-﻿using ForAuction.API.Entities;
-using ForAuction.API.Repositories;
+﻿using ForAuction.API.Contracts;
+using ForAuction.API.Entities;
 
 namespace ForAuction.API.Services;
 
 public class LoggedUser
 {
     private readonly IHttpContextAccessor _httpContextAccessor;
-    public LoggedUser(IHttpContextAccessor httpContext)
+    private readonly IUserRepository _userRepository;
+
+    public LoggedUser(IHttpContextAccessor httpContext, IUserRepository userRepository)
     {
         _httpContextAccessor = httpContext;
+        _userRepository = userRepository;
     }
 
     public User User()
     {
-        var repository = new ForAuctionDbContext();
-
         var token = TokenOnRequest();
         var email = FromBase64String(token);
 
-        return repository.Users.First(user => user.Email.Equals(email));
+        return _userRepository.GetUserByEmail(email);
     }
 
     private string TokenOnRequest()
