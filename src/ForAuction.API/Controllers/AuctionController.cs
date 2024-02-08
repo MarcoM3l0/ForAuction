@@ -1,4 +1,5 @@
 ﻿using ForAuction.API.Entities;
+using ForAuction.API.UseCases.Auctions.GetCurrent;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ForAuction.API.Controllers;

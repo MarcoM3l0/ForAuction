@@ -1,6 +1,8 @@
 ﻿using ForAuction.API.Contracts;
 using ForAuction.API.Entities;
 
+namespace ForAuction.API.UseCases.Auctions.GetCurrent;
+
 public class GetCurrentAuctionUseCase
 {
     private readonly IAuctionRpository _repository;

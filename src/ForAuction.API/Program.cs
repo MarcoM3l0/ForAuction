@@ -3,6 +3,7 @@ using ForAuction.API.Filters;
 using ForAuction.API.Repositories;
 using ForAuction.API.Repositories.DataAccess;
 using ForAuction.API.Services;
+using ForAuction.API.UseCases.Auctions.GetCurrent;
 using ForAuction.API.UseCases.Offers.CreateOffer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -46,7 +47,7 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.Services.AddScoped<AuthenticationUserAttribute>();
-builder.Services.AddScoped<LoggedUser>();
+builder.Services.AddScoped<ILoggedUser, LoggedUser>();
 builder.Services.AddScoped<CreateOfferUseCase>();
 builder.Services.AddScoped<GetCurrentAuctionUseCase>();
 builder.Services.AddScoped<IAuctionRpository, AuctionRepository>();
